@@ -8,15 +8,17 @@ namespace StudentManagementSystem.Models
 {
     public class Subject
     {
-        public int SubjectId { get; set; }
+        private static int nextId = 1;
+        public int SubjectId { get; }
         public string SubjectName { get; set; }
         public int NumLesson { get; set; }
 
-        public Subject(int subjectId, string subjectName, int numLesson)
+        public Subject(string subjectName, int numLesson)
         {
-            SubjectId = subjectId;
+            SubjectId = nextId++;
             SubjectName = subjectName;
             NumLesson = numLesson;
         }
     }
+
 }

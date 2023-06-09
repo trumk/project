@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StudentManagementSystem.Models;
+using StudentManagementSystem.Builders;
 
 namespace StudentManagementSystem
 {
@@ -28,11 +29,14 @@ namespace StudentManagementSystem
             string subjectName = txtName.Text;
             string numLesson = txtNum.Text;
 
-            Subject subject;
+            SubjectConcreteBuilder subBuild = new SubjectConcreteBuilder();
 
             if (int.TryParse(numLesson, out int numLessonInt))
             {
-                subject = new Subject(0, subjectName, numLessonInt);
+
+                Subject subject = subBuild.SetSubjectName(subjectName)
+                                          .SetNumLesson(numLessonInt)
+                                          .Build();   
                 SubjectService service = new SubjectService();
 
                 if (Verify())

@@ -8,7 +8,7 @@ namespace StudentManagementSystem.Models
 {
     public class Student : Person
     {
-        private static int nextId = 101; 
+        private static int nextId = 1; 
 
         public int Id { get; } 
 
@@ -30,7 +30,7 @@ namespace StudentManagementSystem.Models
 
         public static void IncrementNextId()
         {
-            nextId += 100; ;
+            nextId += 1; ;
         }
     }
 }

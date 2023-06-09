@@ -33,7 +33,7 @@ namespace StudentManagementSystem.Builders
 
         public Subject Build()
         {
-            return new Subject(subjectId, subjectName, numLesson);
+            return new Subject(subjectName, numLesson);
         }
     }
 }

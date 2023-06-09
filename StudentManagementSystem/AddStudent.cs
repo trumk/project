@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using StudentManagementSystem.Models;
+using StudentManagementSystem.Builders;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,7 +33,15 @@ namespace StudentManagementSystem
             string subject = cbSubject.SelectedItem.ToString();
 
             
-            Student student = new Student(personName, personAddress, dob, subject);
+            //Student student = new Student(personName, personAddress, dob, subject);
+            StudentConcreteBuilder builder = new StudentConcreteBuilder();
+            Student student = builder.SetPersonName(personName)
+                                    .SetPersonAddress(personAddress)
+                                    .SetDOB(dob)
+                                    .SetSubject(subject)
+                                    .Build();
+
+
             StudentService service = new StudentService();
                 
             if (Verify())

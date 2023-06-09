@@ -72,7 +72,7 @@ namespace StudentManagementSystem
             }
 
             cbSubject.DisplayMember = "subjectName";
-            cbSubject.ValueMember = "subjectId";  // Ánh xạ giá trị của subjectId vào ValueMember
+            cbSubject.ValueMember = "subjectId";  // ánh xạ giá trị của subjectId vào ValueMember
             cbSubject.DataSource = dt;
         }
 

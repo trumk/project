@@ -43,7 +43,7 @@ namespace StudentManagementSystem
 
         public bool updateStudent(int personId, string personName, string personAddress, DateTime dob, string subject, float? grade)
         {
-            MySqlCommand command = new MySqlCommand("UPDATE student SET personName = @name, personAddress = @address, dob = @dob, grade = @grade, subjectId = @sub WHERE personId = @ID", db.getConnection);
+            MySqlCommand command = new MySqlCommand("UPDATE `student` SET personName = @name, personAddress = @address, dob = @dob, grade = @grade, subjectId = @sub WHERE personId = @ID", db.getConnection);
 
             command.Parameters.Add("@ID", MySqlDbType.Int32).Value = personId;
             command.Parameters.Add("@name", MySqlDbType.VarChar).Value = personName;
